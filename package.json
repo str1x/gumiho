@@ -4,6 +4,7 @@
   "description": "Experimental server/client store [IN DEV]",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --mode=development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/str1x/gumiho/issues"
   },
-  "homepage": "https://github.com/str1x/gumiho#readme"
+  "homepage": "https://github.com/str1x/gumiho#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.4.0",
+    "eslint-loader": "^3.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
+  }
 }
