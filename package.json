@@ -1,0 +1,20 @@
+{
+  "name": "gumiho",
+  "version": "0.0.0",
+  "description": "Experimental server/client store [IN DEV]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/str1x/gumiho.git"
+  },
+  "keywords": [],
+  "author": "str1x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/str1x/gumiho/issues"
+  },
+  "homepage": "https://github.com/str1x/gumiho#readme"
+}
