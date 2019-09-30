@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jest.config.js",
+    "test-dev": "jest --config jest.config.js --watchAll"
   },
   "repository": {
     "type": "git",
@@ -22,10 +23,16 @@
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "eslint": "^6.4.0",
     "eslint-loader": "^3.0.0",
+    "eslint-plugin-jest": "^22.17.0",
+    "jest": "^24.9.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12"
   }
 }
