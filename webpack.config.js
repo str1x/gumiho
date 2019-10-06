@@ -1,24 +1,29 @@
 const path = require('path');
 
 const config = {
-    entry: path.resolve(__dirname, './src/index.js'),
+    entry: path.resolve(__dirname, './src/index.ts'),
+    devtool: 'source-map',
     module: {
         rules: [
             {
                 enforce: 'pre',
-                test: /\.js$/,
+                test: /\.ts(x?)$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader',
             },
             {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
+                test: /\.ts(x?)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'ts-loader',
                     },
-                },
+                ],
+            },
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                loader: 'source-map-loader',
             },
         ],
     },
@@ -32,7 +37,7 @@ const config = {
             '@src': path.resolve(__dirname, 'src'),
             '@utils': path.resolve(__dirname, '/src/utils'),
         },
-        extensions: ['.js'],
+        extensions: ['.ts'],
     },
 }
 

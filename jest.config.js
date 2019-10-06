@@ -3,12 +3,15 @@ module.exports = {
     browser: false,
     collectCoverage: true,
     collectCoverageFrom: [
-        '<rootDir>/src/**.{js,jsx}',
+        '<rootDir>/src/**.{ts}',
         '!**/node_modules/**',
         '!**/vendor/**',
     ],
     moduleNameMapper: {
-        '@src(.*)$': '<rootDir>/src$1',
-        '@utils(.*)$': '<rootDir>/src/utils$1',
+        '^@src/(.*)$': '<rootDir>/src/$1',
+        '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+    },
+    transform: {
+        "^.+\\.ts?$": "ts-jest",
     },
 };
