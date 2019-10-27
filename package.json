@@ -4,9 +4,10 @@
   "description": "Experimental server/client store [IN DEV]",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode=development",
+    "build:dev": "webpack --mode=development",
     "test": "jest --config jest.config.js",
-    "test-dev": "jest --config jest.config.js --watchAll"
+    "test:watch": "jest --config jest.config.js --watchAll",
+    "lint": "./node_modules/.bin/eslint ./src/**"
   },
   "repository": {
     "type": "git",
