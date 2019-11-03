@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/str1x/gumiho.svg?branch=master)](https://travis-ci.com/str1x/gumiho)
+[![Coverage Status](https://coveralls.io/repos/github/str1x/gumiho/badge.svg?branch=master)](https://coveralls.io/github/str1x/gumiho?branch=master)
 
 # gumiho
 Experimental client-server store [IN DEV]

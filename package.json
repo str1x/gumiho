@@ -6,7 +6,7 @@
   "scripts": {
     "build:dev": "webpack --mode=development",
     "test": "jest --config jest.config.js",
-    "coveralls:ci": "cat ./coverage/lcov.info coveralls -v",
+    "coveralls:ci": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls -v",
     "test:watch": "jest --config jest.config.js --watchAll",
     "lint": "./node_modules/.bin/eslint ./src/**"
   },
