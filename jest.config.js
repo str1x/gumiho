@@ -7,7 +7,6 @@ module.exports = {
         '!**/node_modules/**',
         '!**/vendor/**',
     ],
-    coverageReporters: ['text-lcov'],
     moduleNameMapper: {
         '^@src/(.*)$': '<rootDir>/src/$1',
         '^@utils/(.*)$': '<rootDir>/src/utils/$1',
