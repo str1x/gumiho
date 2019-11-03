@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/str1x/gumiho.svg?branch=master)](https://travis-ci.com/str1x/gumiho)
+
 # gumiho
 Experimental client-server store [IN DEV]
 
