@@ -2,6 +2,7 @@ module.exports = {
     bail: 1,
     browser: false,
     collectCoverage: true,
+    coverageReporters: ['text', 'lcov'],
     collectCoverageFrom: [
         '<rootDir>/src/*.ts',
         '!**/node_modules/**',
