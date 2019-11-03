@@ -3,7 +3,7 @@ module.exports = {
     browser: false,
     collectCoverage: true,
     collectCoverageFrom: [
-        '<rootDir>/src/**.{ts}',
+        '<rootDir>/src/*.ts',
         '!**/node_modules/**',
         '!**/vendor/**',
     ],
@@ -14,4 +14,9 @@ module.exports = {
     transform: {
         "^.+\\.ts?$": "ts-jest",
     },
+    globals: {
+        'ts-jest': {
+            tsConfig: '<rootDir>/tests/tsconfig.json'
+        }
+    }
 };
