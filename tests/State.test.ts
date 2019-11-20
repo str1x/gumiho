@@ -10,21 +10,21 @@ describe('State', () => {
     const notValidEntities = [Symbol('sym'), /w/, () => {}];
     const entities = [...validEntities, ...notValidEntities];
 
-    describe('isPure static method', () => {
+    describe('isPure', () => {
         const { isPure } = State;
-        it('with pure', () => {
+        it('should return false for pure values', () => {
             for (const value of pureValues) {
                 expect(isPure(value)).toBe(true);
             }
         });
-        it('with entities', () => {
+        it('should return false for entities', () => {
             for (const value of entities) {
                 expect(isPure(value)).toBe(false);
             }
         });
     });
 
-    describe('makeFlatState static method', () => {
+    describe('makeFlatState', () => {
         const { makeFlatState } = State;
         it ('with pure', () => {
             for (const value of pureValues) {
@@ -35,7 +35,7 @@ describe('State', () => {
                 });
             }
         });
-        it('with valid entities', () => {
+        it('should create state for with valid entities', () => {
             for (const value of validEntities) {
                 const flatState = makeFlatState(value);
                 expect(flatState).toEqual({
@@ -44,7 +44,7 @@ describe('State', () => {
                 });
             }
         });
-        it('with not valid entities', () => {
+        it('should create state with undefined for not valid entities', () => {
             for (const value of notValidEntities) {
                 const flatState = makeFlatState(value);
                 expect(flatState).toEqual({
@@ -53,7 +53,7 @@ describe('State', () => {
                 });
             }
         });
-        it('with nested object in array', () => {
+        it('should create state for nested object in array', () => {
             const rawState = [1, '2', false, /w/, [3],
                 {
                     propA: 1,
@@ -67,9 +67,29 @@ describe('State', () => {
                 }
             ];
             const flatState = makeFlatState(rawState);
-            console.log(flatState);
             expect(Object.keys(flatState.state)).toHaveLength(11);
             expect(stringifyState(flatState)).toMatchSnapshot();
+        });
+    });
+
+    describe('get', () => {
+        it('shoult return correct value for pure field', () => {
+            for (const value of pureValues) {
+                const state = new State(value);
+                expect(state.get() === value)
+            }
+        });
+        it('should return empty entites', () => {
+            for (const value of validEntities) {
+                const state = new State(value);
+                expect(state.get() === {});
+            }
+        });
+        it('should return undefined for not valid entites', () => {
+            for (const value of notValidEntities) {
+                const state = new State(value);
+                expect(state.get() === undefined);
+            }
         });
     });
 });

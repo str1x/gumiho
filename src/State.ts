@@ -90,4 +90,11 @@ export default class State {
             };
         }
     }
+
+    public get(...args: Array<string|number>): PureType | Record<string, unknown> {
+        if (!args.length) {
+            return this._state;
+        }
+        return undefined;
+    }
 }

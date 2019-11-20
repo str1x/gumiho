@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`State makeFlatState static method with nested object in array 1`] = `
+exports[`State makeFlatState should create state for nested object in array 1`] = `
 "{
     \\"state\\": {
         \\"array#/0\\": 1,
